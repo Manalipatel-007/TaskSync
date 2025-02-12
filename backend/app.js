@@ -22,8 +22,11 @@ app.use(express.json());
 app.use(cors());
 
 // ✅ Import authentication routes
-const authRoutes = require("./routes/auth");
+const authRoutes = require("./routes/auth"); // auth routes
+const taskRoutes = require("./routes/task"); // Task routes
+
 app.use("/api/auth", authRoutes); // ✅ Register auth routes
+app.use("/api/task", taskRoutes);
 
 app.get("/", (req, res) => {
   res.send("Hello, world! API is running...");
